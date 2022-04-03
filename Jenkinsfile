@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'Welcome LoanService'
+      dir("LoanApp"){
+         sh 'Welcome LoanService'
+        }
       }
     }
 
