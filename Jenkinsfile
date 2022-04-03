@@ -9,7 +9,7 @@ pipeline {
 
     stage('Test Shell') {
           steps {
-            sh 'git --version'
+            sh 'docker images'
           }
         }
 
