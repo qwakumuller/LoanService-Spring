@@ -3,9 +3,8 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-      dir("LoanApp"){
-         sh 'Welcome LoanService'
-        }
+        sh 'echo "Hello,Post-Service"'
+
       }
     }
 
