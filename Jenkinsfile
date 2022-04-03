@@ -9,7 +9,7 @@ pipeline {
 
     stage('Test Shell') {
           steps {
-            sh 'java -version'
+            sh 'git --version'
           }
         }
 
