@@ -9,6 +9,7 @@ pipeline {
 
     stage('Test Shell') {
           steps {
+            sh 'sudo su'
             sh 'docker images'
           }
         }
