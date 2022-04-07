@@ -10,7 +10,7 @@ pipeline {
    
          stage('Quality Gate') {
         steps {
-            withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'SonarQubeScanner') {
+            withSonarQubeEnv("sonarqube-8.3) {
                 withMaven {
                     sh 'mvn clean package sonar:sonar'
                 }
