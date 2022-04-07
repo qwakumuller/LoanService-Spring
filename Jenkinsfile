@@ -18,6 +18,16 @@ pipeline {
         }
     }
     
+    stage('Quality Gate2') {
+        steps {
+            withSonarQubeEnv("sonarcloud") {
+                withMaven {
+                    sh 'mvn clean package sonar:sonar'
+                }
+            }
+        }
+    }
+    
   }
   
 }
