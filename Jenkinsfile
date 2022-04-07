@@ -7,11 +7,16 @@ pipeline {
       }
     }
 
-    stage('Test Shell') {
-          steps {
-            sh 'kubectl get services'
-          }
+   
+         stage('Quality Gate') {
+        steps {
+            withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'SonarQubeScanner') {
+                withMaven {
+                    sh 'mvn clean package sonar:sonar'
+                }
+            }
         }
+    }
 
-  }
+  
 }
